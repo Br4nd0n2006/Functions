@@ -1,0 +1,37 @@
+def show_terms():
+    terms_window = Window(app, title="Terms and Conditions", height=600, width=400)
+    terms_text = Text(terms_window, text="Terms and Conditions", size=14, align="top")
+    
+    # Create a frame for the scrollbar
+    frame = tk.Frame(terms_window.tk)
+    frame.pack(fill="both", expand=True)
+    
+    # Create a canvas and a scrollbar
+    canvas = tk.Canvas(frame)
+    scrollbar = tk.Scrollbar(frame, orient="vertical", command=canvas.yview)
+    scrollable_frame = tk.Frame(canvas)
+    
+    scrollable_frame.bind(
+        "<Configure>",
+        lambda e: canvas.configure(
+            scrollregion=canvas.bbox("all")
+        )
+    )
+    
+    canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+    canvas.configure(yscrollcommand=scrollbar.set)
+    
+    canvas.pack(side="left", fill="both", expand=True)
+    scrollbar.pack(side="right", fill="y")
+    
+    terms_content = tk.Label(scrollable_frame, text="""There may be legal notices elsewhere on GOV.UK that relate to how you use the site.
+
+    We're not liable if we fail to comply with these terms and conditions because of circumstances beyond our reasonable control.
+
+    We might decide not to exercise or enforce any right available to us under these terms and conditions. We can always decide to exercise or enforce that right at a later date.
+
+    Doing this once will not mean we automatically waive the right on any other occasion.
+
+    If any of these terms and conditions are held to be invalid, unenforceable or illegal for any reason, the remaining terms and conditions will still apply.
+    """, justify="left", wraplength=380)
+    terms_content.pack(fill="both", expand=True)
