@@ -1,4 +1,4 @@
-def show_terms():
+def show_terms(): # Creates and displays the terms and conditons to user for test booking
     terms_window = Window(app, title="Terms and Conditions", height=600, width=400)
     terms_text = Text(terms_window, text="Terms and Conditions", size=14, align="top")
     
