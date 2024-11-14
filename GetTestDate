@@ -1,0 +1,9 @@
+def get_testdate():
+	# procedure to get dates from calendar
+	global calendar_window
+	global test_date # global variable as it is used in other parts of the program
+	#global departure_date # global variable as it is used in other parts of the program
+	test_date = calendar_window.get_date()
+	print (test_date)
+	inputTextDate.value = test_date # put selected date into textbox
+	calendar_window.destroy() # destroys calendar window
