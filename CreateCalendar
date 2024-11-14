@@ -1,19 +1,13 @@
-def create_calendar():
+def create_calendar(): # Procedure to create a tkinter calendar
     global calendar_window
     calendar_window = tk.Tk()
     calendar_window.title("Select Dates")
 
     TestDate_text = tk.Label(calendar_window, text="Select Test Date:")
     TestDate_text.pack(pady=5)
-    #global arrival_calendar
-    #arrival_calendar = Calendar(calendar_window, selectmode='day')
-    #arrival_calendar.pack(pady=5)
     calendar_window = Calendar(calendar_window, selectmode='day')
     calendar_window.pack(pady=5)
-
-
-    
     submit_button = tk.Button(calendar_window, text="Submit", command=get_testdate)
     submit_button.pack(pady=20)
 
-    calendar_window.mainloop()
+    calendar_window.mainloop() # Refreshed calendar with reflected date
