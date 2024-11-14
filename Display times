@@ -1,4 +1,4 @@
-def display_times():
+def display_times(): # Displays the random times inside of a combo box
     random_times = generate_random_times()
     SelectTestTime.clear()  # Clear previous options
     SelectTestTime.append(*random_times)  # Add new times to the combo box
