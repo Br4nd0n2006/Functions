@@ -1,0 +1,6 @@
+# change theme function
+def change_theme():
+    if app.bg == "white":
+        app.bg = "darkgray"
+    else:
+        app.bg = "white"
