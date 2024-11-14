@@ -1,0 +1,15 @@
+def make_booking():
+    print("i am about to confirm your booking")
+    if not SelectTestTime.value or not inputTextDate.value:
+        info('Error', 'Time and date must be completed.')
+    else:
+        booking_time = SelectTestTime.value
+        booking_date = inputTextDate.value
+        booking_status = 0  # Assuming 0 is the default status for a new booking
+        user_id = 1  # Replace with the actual user ID of the logged-in user
+
+        book834_query = "insert into bookings (booking_time, booking_date, booking_status, UserID) VALUES (?, ?, ?, ?)"
+        execute_sql(database_file, book834_query, (booking_time, booking_date, booking_status, user_id))
+        info('Booking', 'Success')
+        SelectTestTime.value = ""
+        inputTextDate.value = ""
