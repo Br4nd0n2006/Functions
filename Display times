@@ -1,0 +1,4 @@
+def display_times():
+    random_times = generate_random_times()
+    SelectTestTime.clear()  # Clear previous options
+    SelectTestTime.append(*random_times)  # Add new times to the combo box
