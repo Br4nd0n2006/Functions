@@ -1,4 +1,4 @@
-def generate_random_times():
+def generate_random_times(): # Function to generate a random booking time
     times = set()
     while len(times) < 4:
         hour = random.randint(0, 23)
