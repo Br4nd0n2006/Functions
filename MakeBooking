@@ -1,4 +1,4 @@
-def make_booking():
+def make_booking(): # Procedure to make a booking
     print("i am about to confirm your booking")
     if not SelectTestTime.value or not inputTextDate.value:
         info('Error', 'Time and date must be completed.')
